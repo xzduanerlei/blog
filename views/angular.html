@@ -1,0 +1,54 @@
+
+<!doctype html>
+<html ng-app='polls'>
+<head>
+	<meta charset="utf-8">
+	<title>hello,angular2</title>
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
+	<style type="text/css">
+		#myAlert{
+			position: fixed;
+		    width: 80%;
+		    margin: 0 auto;
+		    z-index: 1040;
+		    left: 10%;
+		    top: 60px;
+		    box-shadow: 3px 3px 3px #DBDBDB;
+		}
+		#myAlert .alert{
+			margin-bottom: 0px;
+		}
+	</style>
+</head>
+<body ng-controller='PollListCtrl'>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="navbar-header">
+			<a href="#/polls">
+				<%= title%>
+			</a>
+		</div>
+	</nav>
+
+	<runoob-tips></runoob-tips>
+
+	<div class="container">
+		<div ng-view></div>
+	</div>
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/angjs/angular.min.js"></script>
+	<script src="/angjs/angular-resource.min.js"></script>
+	<script src="/socket.io/lib/socket.io.js"></script>
+	<script src="/angjs/controllers.js"></script>
+	<script src="/angjs/app.js"></script>
+	<script src="/angjs/services.js"></script>
+	<script type="text/javascript">
+		setTimeout(function(){
+			$('.alert').alert('close');
+		},3000)
+
+	</script>
+</body>
+</html>

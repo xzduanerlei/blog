@@ -1,0 +1,40 @@
+<div class="page-header">
+    <h1>投票列表</h1>
+</div>
+<button type="button" class="close" id="tips" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+<div class="row">
+    <div class="col-xs-5">
+        <a href="#/new" class="btn btn-default">
+            <span class="glyphicon glyphicon-plus"></span> 
+            投票
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-7">
+        <input type="text" class="form-control" ng-model="query" laceholder="Search for a poll">
+    </div>
+</div>
+<p></p>
+<div class="row" ng-switch on="polls.length">
+    <ul ng-switch-when="0">
+        <li>
+            <span>数据库中的任何投票。你愿意
+            <a href="#/new">新建一个</a>吗?</span>
+        </li>
+    </ul>
+    <ul ng-switch-default>
+        <li ng-repeat="poll in polls | filter:query">
+            <a href="#/poll/{{poll._id}}">{{poll.question}}</a>
+            <a ng-click="delpoll(poll._id);">删除</a>
+        </li>
+    </ul>
+</div>
+<p></p>
