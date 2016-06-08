@@ -3,7 +3,7 @@ exports.db = {
   name: 'blog',
   collection: 'users'  // collection name for MongoDB
 };
-
+//µÇÂ½
 exports.login = {
   route: '/login',
   // logoutRoute: '/logout',
