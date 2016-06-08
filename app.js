@@ -43,7 +43,7 @@ app.use(function(req, res) {
   res.status(400);
   res.render('./error/404.html');
 });
-// error handlers
+// error 505 handlers
 app.use(function(error, req, res, next) {
   res.status(500);
   res.render('./error/500.html',{
